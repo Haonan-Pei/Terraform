@@ -22,7 +22,7 @@ resource "aws_instance" "aws-terraform-node" {
   instance_type = var.instance_type
 
   subnet_id       = var.subnet_id
-  security_groups = var.security_groups_ids
+  security_groups = var.security_groups
   root_block_device {
     encrypted             = "true"
     volume_type           = "gp3"

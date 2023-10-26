@@ -25,6 +25,6 @@ variable "subnet_id" {
   description = "AWS Subnet ID"
 }
 
-variable "security_groups_ids" {
+variable "security_groups" {
   description = "AWS Security Group ID"
 }
