@@ -32,7 +32,7 @@ resource "aws_instance" "aws-terraform-node" {
 
   ebs_block_device {
     encrypted             = "true"
-    device_name           = var.ebs_device_name
+    device_name           = "/dev/sdb"
     volume_type           = "gp3"
     volume_size           = var.ebs_volume_size
     delete_on_termination = "true"

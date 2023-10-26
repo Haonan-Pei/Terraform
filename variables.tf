@@ -21,11 +21,6 @@ variable "ebs_volume_size" {
   description = "AWS EC2 Data Volume Size"
 }
 
-variable "ebs_device_name"{
-  description = "AWS EC2 Data Volume Device Name"
-  default = "/dev/sdb"
-}
-
 variable "subnet_id" {
   description = "AWS Subnet ID"
 }
