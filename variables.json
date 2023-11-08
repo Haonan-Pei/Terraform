@@ -1,0 +1,68 @@
+{
+    "rds":[
+      {
+        "identifier": /* string */ /* "aws-rds-name" */,
+  
+        "engine": /* string */ 
+        /* https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> Engine */,
+  
+        "engine_version": /* string */
+        /* https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> EngineVersion */,
+  
+        "instance_class": /* string */
+        /* https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> DBInstanceClass */,
+  
+        "multi_az": /* bool */ /* true | false */,
+  
+        "username": /* string */ /* Default: "root" */,
+        "password": /* string */ /* "XXXXXX" At least 8 characters */,
+  
+        "storage_type": /* string */ /* "gp3" | "gp2" | "io1" */,
+        "allocated_storage": /* number */ /* 50 */,
+  
+        "storage_encrypted": /* bool */ /* true | false */,
+        "kms_key_id": /* string */ /* "KMS Key ID ARN" */,
+  
+        "db_subnet_group_name": /* string */ /* "RDS Subnet Group Name" */,
+        "vpc_security_group_ids": /* list */ /* ["sg-XXXXXX"] */,
+  
+        "parameter_group_name": /* string */ /* "RDS Parameter Group Name" */,
+        "option_group_name": /* string */ /* "RDS Option Group Name" */,
+  
+        "performance_insights_enabled": /* bool */ /* true */
+        /*
+        Unsupport Instance Type: 
+        https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Overview.Engines.html
+        */,
+  
+        "performance_insights_kms_key_id": /* string */ /* "KMS Key ARN" */,
+        "performance_insights_retention_period": /* number */ /* Default: 7 */,
+      
+        "monitoring_interval": /* number */ /* Default: 60 */,
+        "monitoring_role_arn": /* string */ /* "RDS Monitoring Role ARN" */,
+  
+        "backup_retention_period": /* number */ /* Default: 35 */,
+        "copy_tags_to_snapshot": /* bool */ /* true */,
+        "enabled_cloudwatch_logs_exports": /* list */ 
+        /*
+        https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> EnableCloudwatchLogsExports.member.N
+        */,
+  
+        "auto_minor_version_upgrade": /* bool */ /* false */,
+        "skip_final_snapshot": /* bool */ /* true | false */,
+        "deletion_protection": /* bool */ /* true */,
+  
+        "tags": /* map(list) */
+        /*
+          {
+            "Name": "XXXXXX",
+            "Project Code": "XXXXXX",
+            "Project Name": "XXXXXX",
+            "ENV": "XXXXXX", [ nonprod | prod ]
+            "Operator": "DBA"
+          }
+        */
+      }
+    ]
+  }
+  
