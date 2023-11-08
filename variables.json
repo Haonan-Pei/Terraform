@@ -1,68 +1,105 @@
-{
-    "rds":[
-      {
-        "identifier": /* string */ /* "aws-rds-name" */,
-  
-        "engine": /* string */ 
-        /* https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> Engine */,
-  
-        "engine_version": /* string */
-        /* https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> EngineVersion */,
-  
-        "instance_class": /* string */
-        /* https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> DBInstanceClass */,
-  
-        "multi_az": /* bool */ /* true | false */,
-  
-        "username": /* string */ /* Default: "root" */,
-        "password": /* string */ /* "XXXXXX" At least 8 characters */,
-  
-        "storage_type": /* string */ /* "gp3" | "gp2" | "io1" */,
-        "allocated_storage": /* number */ /* 50 */,
-  
-        "storage_encrypted": /* bool */ /* true | false */,
-        "kms_key_id": /* string */ /* "KMS Key ID ARN" */,
-  
-        "db_subnet_group_name": /* string */ /* "RDS Subnet Group Name" */,
-        "vpc_security_group_ids": /* list */ /* ["sg-XXXXXX"] */,
-  
-        "parameter_group_name": /* string */ /* "RDS Parameter Group Name" */,
-        "option_group_name": /* string */ /* "RDS Option Group Name" */,
-  
-        "performance_insights_enabled": /* bool */ /* true */
-        /*
-        Unsupport Instance Type: 
-        https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Overview.Engines.html
-        */,
-  
-        "performance_insights_kms_key_id": /* string */ /* "KMS Key ARN" */,
-        "performance_insights_retention_period": /* number */ /* Default: 7 */,
-      
-        "monitoring_interval": /* number */ /* Default: 60 */,
-        "monitoring_role_arn": /* string */ /* "RDS Monitoring Role ARN" */,
-  
-        "backup_retention_period": /* number */ /* Default: 35 */,
-        "copy_tags_to_snapshot": /* bool */ /* true */,
-        "enabled_cloudwatch_logs_exports": /* list */ 
-        /*
-        https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html ---> EnableCloudwatchLogsExports.member.N
-        */,
-  
-        "auto_minor_version_upgrade": /* bool */ /* false */,
-        "skip_final_snapshot": /* bool */ /* true | false */,
-        "deletion_protection": /* bool */ /* true */,
-  
-        "tags": /* map(list) */
-        /*
-          {
-            "Name": "XXXXXX",
-            "Project Code": "XXXXXX",
-            "Project Name": "XXXXXX",
-            "ENV": "XXXXXX", [ nonprod | prod ]
-            "Operator": "DBA"
-          }
-        */
-      }
-    ]
-  }
-  
+variable "identifier" {
+    description = "AWS RDS Identifier"
+}
+
+variable "engine" {
+    description = "AWS RDS Database Engine"
+}
+
+variable "engine_version" {
+    description = "AWS RDS Database Engine Version"
+}
+
+variable "instance_class" {
+    description = "AWS RDS Instance Class"
+}
+
+variable "multi_az" {
+    description = "AWS RDS Multi AZ"
+}
+
+variable "username" {
+    description = "AWS RDS Master User Name"
+}
+
+variable "password" {
+    description = "AWS RDS Master User Password"
+}
+
+variable "storage_type" {
+    description = "AWS RDS Storage Type"
+    default = "gp3"
+}
+
+variable "allocated_storage" {
+    description = "AWS RDS Storage Size"
+}
+
+variable "kms_key_id" {
+    description = "AWS RDS Encryption KMS Key"
+}
+
+variable "db_subnet_group_name" {
+    description = "AWS RDS Subnet Group"
+}
+
+variable "vpc_security_group_ids" {
+    description = "AWS RDS Security Group"
+}
+
+variable "parameter_group_name" {
+    description = "AWS RDS Parameter Group"
+}
+
+variable "option_group_name" {
+    description = "AWS RDS Option Group"
+}
+
+variable "performance_insights_enabled" {
+    description = "AWS RDS Performance Insights"
+    default = true
+}
+
+variable "performance_insights_kms_key_id" {
+    description = "AWS RDS Performance Insights Encryption KMS Key"
+}
+
+variable "performance_insights_retention_period" {
+    description = "AWS RDS Performance Insights Retention Period"
+    default = 7
+}
+
+variable "monitoring_interval" {
+    description = "AWS RDS Monitoring Interval"
+    default = 60
+}
+
+variable "auto_minor_version_upgrade" {
+    description = "AWS RDS Auto Minor Version Upgrade"
+    default = false
+}
+
+variable "copy_tags_to_snapshot" {
+    description = "AWS RDS Copy Tags To Snapshot"
+    default = true
+}
+
+variable "deletion_protection" {
+    description = "AWS Deletion Protection"
+    default = true
+}
+
+variable "enabled_cloudwatch_logs_exports" {
+    description = "AWS RDS Cloudwatch Logs Exports"
+    default = ["audit", "error", "general", "slowquery"]
+}
+
+variable "skip_final_snapshot" {
+    description = "AWS RDS Skip Final Snapshot"
+    default = true
+}
+
+variable "tags" {
+    description = "AWS RDS Instance Tags"
+    type = map(string)
+}
