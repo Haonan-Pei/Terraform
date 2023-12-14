@@ -1,4 +1,18 @@
+variable "access_key" {
+  description = "AWS Access Key ID"
+}
 
+variable "secret_key" {
+  description = "AWS Secret Key"
+}
+
+variable "token" {
+  description = "AWS Token"
+}
+
+variable "region" {
+  description = "AWS Region"
+}
 variable "instance_type" {
   description = "AWS EC2 Instance Type"
 }
