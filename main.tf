@@ -8,10 +8,10 @@ terraform {
 }
 
 provider "aws" {
-    region     = vars.region
-    access_key = vars.access_key
-    secret_key = vars.secret_key
-    token      = vars.token
+    region     = var.region
+    access_key = var.access_key
+    secret_key = var.secret_key
+    token      = var.token
 }
 
 data "aws_ami" "centos" {
