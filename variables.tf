@@ -10,6 +10,10 @@ variable "session_name" {
   description = "AWS IAM Role Session Name"
 }
 
+variable "count" {
+  description = "Number"
+}
+
 variable "instance_type" {
   description = "AWS EC2 Instance Type"
 }
