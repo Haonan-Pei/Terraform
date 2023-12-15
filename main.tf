@@ -10,8 +10,8 @@ terraform {
 provider "aws" {
     region     = var.region
     assume_role {
-    role_arn = var.role_arn
-  }
+      role_arn = var.role_arn
+    }
 }
 
 data "aws_ami" "centos" {
