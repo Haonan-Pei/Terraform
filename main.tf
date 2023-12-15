@@ -15,12 +15,12 @@ provider "aws" {
     }
 }
 
-data "aws_ami" "centos" {
+data "aws_ami" "amazon_linux_2" {
   most_recent = true
-    
+
   filter {
     name   = "name"
-    values = ["CentOS Linux 7 x86_64 HVM EBS*"]
+    values = ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]
   }
 
   filter {
@@ -32,10 +32,14 @@ data "aws_ami" "centos" {
     name   = "root-device-type"
     values = ["ebs"]
   }
+
+  owners = ["amazon"]
 }
 
+
 resource "aws_instance" "aws-terraform-node" {
-  ami           = data.aws_ami.centos.id
+
+  ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
   subnet_id       = var.subnet_id
