@@ -2,6 +2,10 @@ variable "role_arn" {
   description = "AWS IAM Role ARN"
 }
 
+variable "session_name" {
+  description = "AWS IAM Role Session Name"
+}
+
 variable "region" {
   description = "AWS Region"
 }
