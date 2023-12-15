@@ -44,7 +44,7 @@ resource "aws_instance" "aws-terraform-node" {
   instance_type = var.instance_type
 
   subnet_id       = var.subnet_id
-  security_groups = ["var.vpc_security_group_ids"]
+  security_groups = ["var.vpc_security_groups_ids"]
   root_block_device {
     encrypted             = "true"
     volume_type           = "gp3"
@@ -59,4 +59,9 @@ resource "aws_instance" "aws-terraform-node" {
     volume_size           = var.ebs_volume_size
     delete_on_termination = "true"
   }
+
+  user_data = var.user_data
+  key_name  = var.key_name
+
+  tags = var.tags
 }
