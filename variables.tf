@@ -10,7 +10,7 @@ variable "session_name" {
   description = "AWS IAM Role Session Name"
 }
 
-variable "count" {
+variable "instance_number" {
   description = "Number"
 }
 
