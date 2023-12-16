@@ -1,23 +1,14 @@
 output "instance_id" {
   description = "ID of the EC2 instance"
-  value       = try(
-    aws_instance.aws-terraform-node[0].id,
-    null,
-  )
+  value       = aws_instance.aws-terraform-node.id
 }
 
 output "instance_arn" {
   description = "ARN of the EC2 instance"
-  value       = try(
-    aws_instance.aws-terraform-node[0].arn,
-    null,
-  )
+  value       = aws_instance.aws-terraform-node.arn
 }
 
 output "instance_private_ip" {
   description = "Private IP address of the EC2 instance"
-  value       = try(
-    aws_instance.aws-terraform-node[0].private_ip,
-    null,
-  )
+  value       = aws_instance.aws-terraform-node.private_ip
 }
