@@ -9,7 +9,7 @@ terraform {
 
 module "ec2instance" {
   source  = "app.terraform.io/Haonan-Pei/ec2instance/aws"
-  version = "1.0.6"
+  version = "1.0.7"
 
   region = module.region
   instance_number = module.instance_number
