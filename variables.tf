@@ -38,10 +38,6 @@ variable "vpc_security_groups_ids" {
   description = "AWS Security Group ID"
 }
 
-variable "user_data" {
-  description = "AWS EC2 User Data"
-}
-
 variable "tags" {
   description = "AWS Tags"
   type = map(string)
