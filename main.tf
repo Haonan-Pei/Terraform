@@ -8,5 +8,5 @@ terraform {
 }
 module "ec2_instance" {
   source  = "app.terraform.io/Haonan-Pei/ec2-instance/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 }
