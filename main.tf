@@ -44,7 +44,7 @@ resource "aws_instance" "aws-terraform-node-without-module" {
   instance_type = var.instance_type
 
   subnet_id       = var.subnet_id
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
     volume_type           = "gp3"
