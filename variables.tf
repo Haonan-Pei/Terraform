@@ -14,10 +14,6 @@ variable "session_name" {
   description = "AWS IAM Role Session Name"
 }
 
-variable "instance_number" {
-  description = "Number"
-}
-
 variable "instance_type" {
   description = "AWS EC2 Instance Type"
 }
