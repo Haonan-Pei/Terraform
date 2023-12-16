@@ -34,7 +34,7 @@ variable "subnet_id" {
   description = "AWS Subnet ID"
 }
 
-variable "vpc_security_groups_ids" {
+variable "vpc_security_group_ids" {
   description = "AWS Security Group ID"
 }
 
