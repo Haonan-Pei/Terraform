@@ -13,7 +13,7 @@ module "ec2instance" {
 
   region = var.region
   instance_number = var.instance_number
-  vpc_security_group_ids = ["var.vpc_security_group_ids"]
+  vpc_security_group_ids = [var.vpc_security_group_ids]
   role_arn     = var.role_arn
   session_name = var.session_name
   instance_type = var.instance_type
