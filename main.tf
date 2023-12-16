@@ -38,7 +38,7 @@ data "aws_ami" "amazon_linux_2" {
 
 
 resource "aws_instance" "aws-terraform-node-without-module" {
-  count = length([var.name])
+  count = length(var.name)
 
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
