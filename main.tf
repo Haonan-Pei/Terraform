@@ -21,6 +21,5 @@ module "ec2instance" {
   session_name = "${var.session_name}"
   subnet_id = "${var.subnet_id}"
   tags = "${var.tags}"
-  user_data = "${var.user_data}"
-  vpc_security_groups_ids = "${var.vpc_security_groups_ids}"
+  vpc_security_groups_ids = [module.security_group.vpc_security_groups_ids]
 }
