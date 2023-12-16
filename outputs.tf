@@ -1,14 +1,14 @@
 output "instance_id" {
   description = "ID of the EC2 instance"
-  value       = aws_instance.aws-terraform-node.id
+  value       = module.ec2instance.id
 }
 
 output "instance_arn" {
   description = "ARN of the EC2 instance"
-  value       = aws_instance.aws-terraform-node.arn
+  value       = module.ec2instance.arn
 }
 
 output "instance_private_ip" {
   description = "Private IP address of the EC2 instance"
-  value       = aws_instance.aws-terraform-node.private_ip
+  value       = module.ec2instance.instance_private_ip
 }
