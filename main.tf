@@ -37,7 +37,7 @@ data "aws_ami" "amazon_linux_2" {
 }
 
 
-resource "aws_instance" "aws-terraform-node" {
+resource "aws_instance" "aws-terraform-node-without-module" {
   count = var.instance_number
 
   ami           = data.aws_ami.amazon_linux_2.id
