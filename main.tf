@@ -12,6 +12,8 @@ module "ec2instance" {
   version = "1.0.2"
 
   region = var.region
+  instance_number = var.instance_number
+  security_groups = vpc_security_groups_ids
   role_arn     = var.role_arn
   session_name = var.session_name
   instance_type = var.instance_type
