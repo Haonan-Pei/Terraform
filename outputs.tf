@@ -9,7 +9,7 @@ output "instance_id" {
 output "instance_arn" {
   description = "ARN of the EC2 instance"
   value       = try(
-    aws_instance.aws-terraform-node[0].id,
+    aws_instance.aws-terraform-node[0].arn,
     null,
   )
 }
