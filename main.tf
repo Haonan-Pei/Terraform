@@ -9,7 +9,7 @@ terraform {
 
 module "ec2instance" {
   source  = "app.terraform.io/Haonan-Pei/ec2instance/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   ebs_volume_size = module.ebs_volume_size
   instance_number = module.instance_number
