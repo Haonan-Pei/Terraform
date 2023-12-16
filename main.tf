@@ -12,4 +12,12 @@ module "ec2instance" {
   version = "1.0.2"
 
   region = var.region
+  role_arn     = var.role_arn
+  session_name = var.session_name
+  instance_type = var.instance_type
+  subnet_id       = var.subnet_id
+  root_volume_size = var.root_volume_size
+  ebs_volume_size  = var.ebs_volume_size
+  key_name  = var.key_name
+  tags = var.tags
 }
