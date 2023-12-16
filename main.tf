@@ -6,7 +6,7 @@ terraform {
     }
   }
 }
-module "ec2_instance" {
-  source  = "app.terraform.io/Haonan-Pei/ec2-instance/aws"
+module "ec2instance" {
+  source  = "app.terraform.io/Haonan-Pei/ec2instance/aws"
   version = "1.0.1"
 }
