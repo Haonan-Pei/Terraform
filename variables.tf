@@ -1,3 +1,7 @@
+variable "name" {
+  description = "AWS Tags Key: 'Name'"
+  type = list(string)
+}
 variable "region" {
   description = "AWS Region"
 }
