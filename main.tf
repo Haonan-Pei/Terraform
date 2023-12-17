@@ -53,7 +53,7 @@ data "aws_subnets" "aws-private-subnet" {
   }
   filter {
     name = "availability-zone-id"
-    values = for_each[data.aws_availability_zones.aws-az.zone_ids]
+    values = sort[data.aws_availability_zones.aws-az.zone_ids]
   }
   tags = {
     type = "private"
