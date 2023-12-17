@@ -7,7 +7,7 @@ variable "vpc_id" {
   description = "AWS VPC ID"
 }
 
-variable "availability_zones" {
+variable "az_name" {
   description = "AWS Availability Zones"
 }
 
