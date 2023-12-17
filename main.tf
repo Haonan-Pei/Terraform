@@ -46,19 +46,20 @@ data "aws_availability_zones" "aws-az" {
     values = [var.region]
   }
 }
-data "aws_subnets" "aws-private-subnet" {
+data "aws_subnets" "aws-private-subnets" {
   filter {
     name   = "vpc-id"
     values = [var.vpc_id]
   }
 
-  filter {
-    name = "availability-zone-id"
-    values = [data.aws_availability_zones[count.index].aws-az.zone_ids]
-  }
   tags = {
     type = "private"
   }
+}
+
+data "aws_subnet" "aws-private-subnet" {
+  count = length(data.aws_subnets.aws-private-subnets.ids)
+  id    = tolist(data.aws_subnets.aws-private-subnets.ids)[count.index]
 }
 
 resource "aws_instance" "aws-terraform-node-without-module" {
@@ -66,7 +67,7 @@ resource "aws_instance" "aws-terraform-node-without-module" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  subnet_id       = tolist(data.aws_subnets.aws-private-subnet.ids)[count.index % length(data.aws_availability_zones.aws-az.zone_ids)]
+  subnet_id       = data.aws_subnet.aws-private-subnet.id
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
