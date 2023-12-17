@@ -52,11 +52,10 @@ data "aws_subnets" "aws-private-subnet" {
 
 resource "aws_instance" "aws-terraform-node-without-module" {
   count = length(var.name)
-  for_each      = toset(data.aws_subnets.aws-private-subnet.ids)
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  subnet_id       = each.value
+  subnet_id       = element(data.aws_subnets.aws-private-subnet.id, count.index)
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
