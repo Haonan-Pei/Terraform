@@ -47,14 +47,12 @@ data "aws_availability_zones" "aws-az" {
   }
 }
 data "aws_subnets" "aws-private-subnet" {
+  for_each = toset(data.aws_availability_zones.aws-az.zone_ids)
   filter {
     name   = "vpc-id"
     values = [var.vpc_id]
   }
-  filter {
-    name = "availability-zone-id"
-    values = sort[data.aws_availability_zones.aws-az.zone_ids]
-  }
+
   tags = {
     type = "private"
   }
