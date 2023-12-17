@@ -54,7 +54,7 @@ data "aws_subnets" "aws-private-subnet" {
 
   filter {
     name = "availability-zone-id"
-    values = [data.aws_availability_zones.aws-az.zone_ids]
+    values = [data.aws_availability_zones[count.index].aws-az.zone_ids]
   }
   tags = {
     type = "private"
