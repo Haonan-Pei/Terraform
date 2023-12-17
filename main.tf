@@ -66,8 +66,8 @@ locals {
   ids_sorted_by_az = values(zipmap(data.aws_subnet.aws-private-subnet.*.availability_zone, data.aws_subnet.aws-private-subnet.*.id))
 }
 
-resource "aws_instance" "aws-terraform-node-without-module" {
-  count = length(var.name)
+resource "aws_instance" "aws-terraform-node" {
+  count = length(var.instance_name)
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
@@ -78,6 +78,7 @@ resource "aws_instance" "aws-terraform-node-without-module" {
     volume_type           = "gp3"
     volume_size           = var.root_volume_size
     delete_on_termination = "true"
+    kms_key_id            = var.kms_key_id
   }
 
   ebs_block_device {
@@ -86,9 +87,13 @@ resource "aws_instance" "aws-terraform-node-without-module" {
     volume_type           = "gp3"
     volume_size           = var.ebs_volume_size
     delete_on_termination = "true"
+    kms_key_id            = var.kms_key_id
   }
 
   key_name  = var.key_name
 
-  tags = merge({ "Name" = var.name[count.index] }, var.tags)
+  disable_api_termination = "true"
+  disable_api_stop        = "true"
+
+  tags = merge({ "Name" = var.instance_name[count.index] }, var.tags)
 }

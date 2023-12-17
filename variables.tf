@@ -1,12 +1,3 @@
-variable "name" {
-  description = "AWS Tags Key: 'Name'"
-  type = list(string)
-}
-
-variable "vpc_id" {
-  description = "AWS VPC ID"
-}
-
 variable "region" {
   description = "AWS Region"
 }
@@ -19,6 +10,11 @@ variable "session_name" {
   description = "AWS IAM Role Session Name"
 }
 
+variable "instance_name" {
+  description = "AWS Tags Key: 'Name'"
+  type = list(string)
+}
+
 variable "instance_type" {
   description = "AWS EC2 Instance Type"
 }
@@ -27,6 +23,9 @@ variable "key_name" {
   description = "AWS Key Pair"
 }
 
+variable "kms_key_id" {
+  description = "AWS KMS Key ID"
+}
 variable "root_volume_size" {
   description = "AWS EC2 Root Volume Size"
 }
@@ -34,6 +33,11 @@ variable "root_volume_size" {
 variable "ebs_volume_size" {
   description = "AWS EC2 Data Volume Size"
 }
+
+variable "vpc_id" {
+  description = "AWS VPC ID"
+}
+
 
 variable "subnet_id" {
   description = "AWS Subnet ID"
