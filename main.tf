@@ -46,7 +46,7 @@ data "aws_availability_zones" "aws-az" {
     values = [var.region]
   }
 }
-data "aws_subnets" "aws-private-subnets" {
+data "aws_subnets" "aws-private-subnet" {
   filter {
     name   = "vpc-id"
     values = [var.vpc_id]
