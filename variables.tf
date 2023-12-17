@@ -7,6 +7,10 @@ variable "vpc_id" {
   description = "AWS VPC ID"
 }
 
+variable "availability_zones" {
+  description = "AWS Availability Zones"
+}
+
 variable "region" {
   description = "AWS Region"
 }
