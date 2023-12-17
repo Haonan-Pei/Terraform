@@ -62,12 +62,16 @@ data "aws_subnet" "aws-private-subnet" {
   id    = tolist(data.aws_subnets.aws-private-subnets.ids)[count.index]
 }
 
+locals {
+  ids_sorted_by_az = values(zipmap(data.aws_subnet.aws-private-subnet.*.availability_zone, data.aws_subnet.aws-private-subnet.*.id))
+}
+
 resource "aws_instance" "aws-terraform-node-without-module" {
   count = length(var.name)
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  subnet_id       = data.aws_subnet.aws-private-subnet[count.index].id
+  subnet_id       = ids_sorted_by_az[count.index].id
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
