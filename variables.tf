@@ -2,6 +2,10 @@ variable "name" {
   description = "AWS Tags Key: 'Name'"
   type = list(string)
 }
+
+variable "vpc_id" {
+  description = "AWS VPC ID"
+}
 variable "region" {
   description = "AWS Region"
 }
