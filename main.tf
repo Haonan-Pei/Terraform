@@ -40,7 +40,7 @@ data "aws_vpc" "aws-vpc" {
   id = var.vpc_id
 }
 
-data "aws_subnet" "aws-private-subnet" {
+data "aws_subnets" "aws-private-subnet" {
   filter {
     name   = "vpc-id"
     values = [var.vpc_id]
@@ -55,7 +55,7 @@ resource "aws_instance" "aws-terraform-node-without-module" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  subnet_id       = element(data.aws_subnet.aws-private-subnet.id, count.index)
+  subnet_id       = element(data.aws_subnets.aws-private-subnet.id, count.index)
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
