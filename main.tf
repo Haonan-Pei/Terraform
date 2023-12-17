@@ -40,7 +40,7 @@ data "aws_vpc" "aws-vpc" {
   id = var.vpc_id
 }
 
-data "aws_subnets" "aws-private-subnet" {
+data "aws_subnet" "aws-private-subnet" {
   filter {
     name   = "vpc-id"
     values = [var.vpc_id]
