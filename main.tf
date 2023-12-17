@@ -61,7 +61,7 @@ resource "aws_instance" "aws-terraform-node-without-module" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  availability_zone = element(data.aws_availability_zones.aws-az.id, count.index)
+  availability_zone = tolist(data.aws_availability_zones.aws-az.id, count.index)
   subnet_id       = tolist(data.aws_subnets.aws-private-subnet.ids)[count.index % length(data.aws_subnets.aws-private-subnet.ids)]
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
