@@ -67,7 +67,7 @@ resource "aws_instance" "aws-terraform-node-without-module" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  subnet_id       = data.aws_subnet.aws-private-subnet.id[count.index]
+  subnet_id       = data.aws_subnet.aws-private-subnet[count.index].id
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
