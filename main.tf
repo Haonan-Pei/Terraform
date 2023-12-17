@@ -51,6 +51,11 @@ data "aws_subnets" "aws-private-subnet" {
     name   = "vpc-id"
     values = [var.vpc_id]
   }
+
+  filter {
+    name = "availability-zone-id"
+    values = [data.aws_availability_zones.aws-az.zone_ids]
+  }
   tags = {
     type = "private"
   }
