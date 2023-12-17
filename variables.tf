@@ -7,9 +7,6 @@ variable "vpc_id" {
   description = "AWS VPC ID"
 }
 
-variable "aws_subnets" {
-  description = "AWS Subnets"
-}
 variable "region" {
   description = "AWS Region"
 }

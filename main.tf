@@ -41,12 +41,14 @@ data "aws_vpc" "aws-vpc" {
 }
 
 data "aws_availability_zones" "aws-az" {
+  for_each = toset(data.aws_availability_zones.aws-az.zone-ids)
   filter {
     name   = "region-name"
     values = [var.region]
   }
 }
 data "aws_subnets" "aws-private-subnets" {
+  ids = each.value
   filter {
     name   = "vpc-id"
     values = [var.vpc_id]
@@ -55,11 +57,6 @@ data "aws_subnets" "aws-private-subnets" {
   tags = {
     type = "private"
   }
-}
-
-data "aws_subnet" "aws-private-subnet" {
-  for_each = toset(data.aws_subnets.aws-private-subnet.ids)
-  id       = each.value
 }
 
 resource "aws_instance" "aws-terraform-node-without-module" {
