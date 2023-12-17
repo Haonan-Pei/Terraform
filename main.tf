@@ -52,6 +52,10 @@ data "aws_subnets" "aws-private-subnets" {
     values = [var.vpc_id]
   }
 
+  filter {
+    name = "availability-zone-id"
+    values = [data.aws_availability_zones.aws-az.zone_ids]
+  }
   tags = {
     type = "private"
   }
@@ -62,7 +66,7 @@ resource "aws_instance" "aws-terraform-node-without-module" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  subnet_id       = data.aws_subnet.aws-private-subnet[keys(availability-zone-id)[count.index]].id
+  subnet_id       = tolist(data.aws_subnets.aws-private-subnet.ids)[count.index % length(data.aws_availability_zones.aws-az.zone_ids)]
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
