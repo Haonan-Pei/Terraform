@@ -51,11 +51,11 @@ variable "vpc_security_group_ids"{
 }
 
 variable "parameter_group_name" {
-    description = "AWS RDS Parameter Group Name"
+    description = "AWS RDS Parameter Group"
 }
 
 variable "option_group_name" {
-    description = "AWS RDS Option Group Name"
+    description = "AWS RDS Option Group"
 }
 
 variable "kms_key_id" {

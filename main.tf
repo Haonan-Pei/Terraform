@@ -40,7 +40,7 @@ resource "aws_db_instance" "aws-terraform-rds" {
     copy_tags_to_snapshot           = true
     enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
     auto_minor_version_upgrade      = false
-    skip_final_snapshot             = true
+    skip_final_snapshot             = false
 
     tags = merge({ "Name" = var.identifier }, var.tags)
 }
