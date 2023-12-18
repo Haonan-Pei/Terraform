@@ -34,8 +34,12 @@ variable "root_volume_size" {
   description = "AWS EC2 Root Volume Size"
 }
 
-variable "ebs_volume_size" {
-  description = "AWS EC2 Data Volume Size"
+variable "ebs_01_volume_size" {
+  description = "AWS EC2 Data Volume 01 Size"
+}
+
+variable "ebs_02_volume_size" {
+  description = "AWS EC2 Data Volume 01 Size"
 }
 
 variable "vpc_id" {
