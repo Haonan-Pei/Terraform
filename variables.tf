@@ -1,15 +1,14 @@
-variable "access_key" {
-    description = "AWS AccessKey ID"
+variable "region" {
+  description = "AWS Region"
 }
 
-variable "secret_key" {
-    description = "AWS Secret Key"
-}
-
-variable "token" {
+variable "role_arn" {
     description = "AWS Session Token"
 }
 
+variable "session_name" {
+    description = "AWS IAM Role Session Name"
+}
 variable "identifier" {
     description = "AWS RDS Identifier"
 }
