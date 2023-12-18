@@ -1,14 +1,34 @@
-output "instance_id" {
-  description = "ID of the EC2 instance"
-  value       = aws_instance.aws-terraform-node[*].id
+output "db_instance_name" {
+  description = "AWS RDS Instance Name"
+  value       = aws_db_instance.aws-terraform-rds.db_instance_name
 }
 
-output "instance_arn" {
-  description = "ARN of the EC2 instance"
-  value       = aws_instance.aws-terraform-node[*].arn
+output "db_instance_arn" {
+  description = "AWS RDS Instance ARN"
+  value       = aws_db_instance.aws-terraform-rds.db_instance_arn
 }
 
-output "instance_private_ip" {
-  description = "Private IP address of the EC2 instance"
-  value       = aws_instance.aws-terraform-node[*].private_ip
+output "db_instance_status" {
+  description = "AWS RDS Instance Status"
+  value       = aws_db_instance.aws-terraform-rds.db_instance_status
+}
+
+output "db_instance_engine" {
+  description = "AWS RDS Instance Engine"
+  value       = aws_db_instance.aws-terraform-rds.db_instance_engine
+}
+
+output "db_instance_engine_version_actual" {
+  description = "AWS RDS Instance Engine Version"
+  value       = aws_db_instance.aws-terraform-rds.db_instance_engine_version_actual
+}
+
+output "db_instance_port" {
+  description = "AWS RDS Instance Port"
+  value       = aws_db_instance.aws-terraform-rds.db_instance_port
+}
+
+output "db_instance_endpoint" {
+  description = "AWS RDS Instance Endpoint"
+  value       = aws_db_instance.aws-terraform-rds.db_instance_endpoint
 }

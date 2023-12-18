@@ -3,7 +3,7 @@ variable "region" {
 }
 
 variable "role_arn" {
-    description = "AWS Session Token"
+    description = "AWS IAM Role ARN"
 }
 
 variable "session_name" {
