@@ -10,8 +10,12 @@ variable "session_name" {
   description = "AWS IAM Role Session Name"
 }
 
+variable "instance_number" {
+  description = "AWS Instance Number"
+}
+
 variable "instance_name" {
-  description = "AWS Tags Key: 'Name'"
+  description = "AWS Instance Number"
   type = list(string)
 }
 

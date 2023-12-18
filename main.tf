@@ -67,11 +67,11 @@ locals {
 }
 
 resource "aws_instance" "aws-terraform-node" {
-  count = length(var.instance_name)
+  count = length(var.instance_number)
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
-  subnet_id       = local.ids_sorted_by_az[count.index]
+  subnet_id       = var.instance_number[count.index] % 2 != 1 ? locals.ids_sorted_by_az[count.index % 2] : local.ids_sorted_by_az[count.index % 3]
   vpc_security_group_ids = [var.vpc_security_group_ids]
   root_block_device {
     encrypted             = "true"
