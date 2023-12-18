@@ -28,6 +28,11 @@ output "db_instance_multi_az" {
   value = aws_db_instance.aws-terraform-rds.multi_az
 }
 
+output "db_instance_availability_zone" {
+  description = "AWS RDS Multi AZ Status"
+  value = aws_db_instance.aws-terraform-rds.availability_zone
+}
+
 output "db_instance_port" {
   description = "AWS RDS Instance Port"
   value       = aws_db_instance.aws-terraform-rds.port
