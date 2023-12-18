@@ -67,7 +67,7 @@ locals {
 }
 
 resource "aws_instance" "aws-terraform-node" {
-  count = length(var.instance_number)
+  count = var.instance_number
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
