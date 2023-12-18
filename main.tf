@@ -21,7 +21,6 @@ resource "aws_db_instance" "aws-terraform-rds" {
     engine_version                  = var.engine_version
     instance_class                  = var.instance_class
 
-    availability_zone               = var.availability_zone
     multi_az                        = var.multi_az
     username                        = var.username
     password                        = var.password

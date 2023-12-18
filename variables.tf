@@ -25,10 +25,6 @@ variable "instance_class" {
     description = "AWS RDS Instance Type"
 }
 
-variable "availability_zone" {
-    description = "AWS RDS Availability Zone"
-}
-
 variable "multi_az" {
     description = "AWS Multi AZ Option"
 }
