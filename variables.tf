@@ -31,7 +31,6 @@ variable "availability_zone" {
 
 variable "multi_az" {
     description = "AWS Multi AZ Option"
-    default = "false"
 }
 
 variable "username"{
