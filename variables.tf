@@ -1,61 +1,78 @@
-variable "region" {
-  description = "AWS Region"
+variable "access_key" {
+    description = "AWS AccessKey ID"
 }
 
-variable "role_arn" {
-  description = "AWS IAM Role ARN"
+variable "secret_key" {
+    description = "AWS Secret Key"
 }
 
-variable "session_name" {
-  description = "AWS IAM Role Session Name"
+variable "token" {
+    description = "AWS Session Token"
 }
 
-variable "instance_number" {
-  description = "AWS Instance Number"
+variable "identifier" {
+    description = "AWS RDS Identifier"
 }
 
-variable "instance_name" {
-  description = "AWS Instance Number"
-  type = list(string)
+variable "engine" {
+    description = "AWS RDS Engine"
 }
 
-variable "instance_type" {
-  description = "AWS EC2 Instance Type"
+variable "engine_version" {
+    description = "AWS RDS Engine Version"
 }
 
-variable "key_name" {
-  description = "AWS Key Pair"
+variable "instance_class" {
+    description = "AWS RDS Instance Type"
+}
+
+variable "availability_zone" {
+    description = "AWS RDS Availability Zone"
+}
+
+variable "multi_az" {
+    description = "AWS Multi AZ Option"
+    default = "false"
+}
+
+variable "username"{
+    description = "AWS RDS Master DB User Name"
+}
+
+variable "password" {
+    description = "AWS RDS Master DB User Password"
+}
+
+variable "db_subnet_group_name" {
+    description = "AWS RDS Subnet Group"
+}
+
+variable "vpc_security_group_ids"{
+    description = "AWS RDS Security Group"
+}
+
+variable "parameter_group_name" {
+    description = "AWS RDS Parameter Group Name"
+}
+
+variable "option_group_name" {
+    description = "AWS RDS Option Group Name"
 }
 
 variable "kms_key_id" {
-  description = "AWS KMS Key ID"
-}
-variable "root_volume_size" {
-  description = "AWS EC2 Root Volume Size"
+    description = "AWS RDS KMS Key"
 }
 
-variable "ebs_01_volume_size" {
-  description = "AWS EC2 Data Volume 01 Size"
+variable "allocated_storage" {
+    description = "AWS RDS Storage"
+    default = 20
 }
 
-variable "ebs_02_volume_size" {
-  description = "AWS EC2 Data Volume 01 Size"
-}
-
-variable "vpc_id" {
-  description = "AWS VPC ID"
-}
-
-
-variable "subnet_id" {
-  description = "AWS Subnet ID"
-}
-
-variable "vpc_security_group_ids" {
-  description = "AWS Security Group ID"
+variable "monitoring_role_arn" {
+    description = "AWS RDS Monitoring Role"
 }
 
 variable "tags" {
-  description = "AWS Tags"
+  description = "AWS RDS Instance Tags"
   type = map(string)
 }
