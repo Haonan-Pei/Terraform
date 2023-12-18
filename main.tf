@@ -77,7 +77,7 @@ resource "aws_instance" "aws-terraform-node" {
     encrypted             = "true"
     volume_type           = "gp3"
     volume_size           = var.root_volume_size
-    delete_on_termination = "true"
+    delete_on_termination = "false"
     kms_key_id            = var.kms_key_id
   }
 
@@ -86,7 +86,7 @@ resource "aws_instance" "aws-terraform-node" {
     device_name           = "/dev/sdb"
     volume_type           = "gp3"
     volume_size           = var.ebs_01_volume_size
-    delete_on_termination = "true"
+    delete_on_termination = "false"
     kms_key_id            = var.kms_key_id
   }
 
@@ -95,7 +95,7 @@ resource "aws_instance" "aws-terraform-node" {
     device_name           = "/dev/sdc"
     volume_type           = "gp3"
     volume_size           = var.ebs_02_volume_size
-    delete_on_termination = "true"
+    delete_on_termination = "false"
     kms_key_id            = var.kms_key_id
   }
 
