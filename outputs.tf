@@ -1,23 +1,23 @@
 ##### EC2 #####
 output "instance_id" {
   description = "ID of the EC2 instance"
-  value       = module.ec2_rds.id
+  value       = module.ec2_rds.instance_id
 }
 
 output "instance_arn" {
   description = "ARN of the EC2 instance"
-  value       = module.ec2_rds.arn
+  value       = module.ec2_rds.instance_arn
 }
 
 output "instance_private_ip" {
   description = "Private IP address of the EC2 instance"
-  value       = module.ec2_rds.private_ip
+  value       = module.ec2_rds.instance_private_ip
 }
 
 ##### RDS #####
 output "db_instance_name" {
   description = "AWS RDS Instance Name"
-  value       = module.ec2_rds.identifier
+  value       = module.ec2_rds.db_instance_name
 }
 
 output "db_instance_arn" {
