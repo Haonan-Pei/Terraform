@@ -30,7 +30,8 @@ module "ec2_rds" {
   instance_name = var.instance_name
   instance_type = var.instance_type
   key_name = var.key_name
-  kms_key_id = var.kms_key_id
+  ec2_kms_key_id = var.ec2_kms_key_id
+  rds_kms_key_id = var.rds_kms_key_id
   monitoring_role_arn = var.monitoring_role_arn
   multi_az = var.multi_az
   option_group_name = var.option_group_name
@@ -41,8 +42,10 @@ module "ec2_rds" {
   root_volume_size = var.root_volume_size
   session_name = var.session_name
   subnet_id = var.subnet_id
-  tags = var.tags
+  ec2_tags = var.ec2_tags
+  rds_tags = var.rds_tags
   username = var.username
   vpc_id = var.vpc_id
-  vpc_security_group_ids = var.vpc_security_group_ids
+  ec2_vpc_security_group_ids = var.ec2_vpc_security_group_ids
+  rds_vpc_security_group_ids = var.rds_vpc_security_group_ids
 }

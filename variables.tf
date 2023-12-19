@@ -24,7 +24,7 @@ variable "key_name" {
   description = "AWS Key Pair"
 }
 
-variable "kms_key_id" {
+variable "ec2_kms_key_id" {
   description = "AWS KMS Key ID"
 }
 variable "root_volume_size" {
@@ -48,11 +48,20 @@ variable "subnet_id" {
   description = "AWS Subnet ID"
 }
 
-variable "vpc_security_group_ids" {
+variable "ec2_vpc_security_group_ids" {
   description = "AWS Security Group ID"
 }
 
-variable "tags" {
+variable "rds_vpc_security_group_ids" {
+  description = "AWS Security Group ID"
+}
+
+variable "ec2_tags" {
+  description = "AWS Tags"
+  type = map(string)
+}
+
+variable "rds_tags" {
   description = "AWS Tags"
   type = map(string)
 }
@@ -90,7 +99,7 @@ variable "db_subnet_group_name" {
     description = "AWS RDS Subnet Group"
 }
 
-variable "vpc_security_group_ids"{
+variable "rds_vpc_security_group_ids"{
     description = "AWS RDS Security Group"
 }
 
@@ -102,7 +111,7 @@ variable "option_group_name" {
     description = "AWS RDS Option Group"
 }
 
-variable "kms_key_id" {
+variable "rds_kms_key_id" {
     description = "AWS RDS KMS Key"
 }
 
@@ -115,7 +124,7 @@ variable "monitoring_role_arn" {
     description = "AWS RDS Monitoring Role"
 }
 
-variable "tags" {
+variable "rds_tags" {
   description = "AWS RDS Instance Tags"
   type = map(string)
 }
