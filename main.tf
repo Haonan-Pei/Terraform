@@ -15,33 +15,6 @@ provider "aws" {
     }
 }
 
-variable "allocated_storage" {}
-variable "db_subnet_group_name" {}
-variable "ebs_01_volume_size" {}
-variable "ebs_02_volume_size" {}
-variable "engine" {}
-variable "engine_version" {}
-variable "identifier" {}
-variable "instance_class" {}
-variable "instance_name" {}
-variable "instance_type" {}
-variable "key_name" {}
-variable "kms_key_id" {}
-variable "monitoring_role_arn" {}
-variable "multi_az" {}
-variable "option_group_name" {}
-variable "parameter_group_name" {}
-variable "password" {}
-variable "region" {}
-variable "role_arn" {}
-variable "root_volume_size" {}
-variable "session_name" {}
-variable "subnet_id" {}
-variable "tags" {}
-variable "username" {}
-variable "vpc_id" {}
-variable "vpc_security_group_ids" {}
-
 module "ec2_rds" {
   source  = "app.terraform.io/eBaoTech/ec2_rds/aws"
   version = "1.0.0"
