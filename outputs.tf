@@ -22,40 +22,40 @@ output "db_instance_name" {
 
 output "db_instance_arn" {
   description = "AWS RDS Instance ARN"
-  value       = module.ec2_rds.arn
+  value       = module.ec2_rds.db_instance_arn
 }
 
 output "db_instance_status" {
   description = "AWS RDS Instance Status"
-  value       = module.ec2_rds.status
+  value       = module.ec2_rds.db_instance_status
 }
 
 output "db_instance_engine" {
   description = "AWS RDS Instance Engine"
-  value       = module.ec2_rds.engine
+  value       = module.ec2_rds.db_instance_engine
 }
 
 output "db_instance_engine_version" {
   description = "AWS RDS Instance Engine Version"
-  value       = module.ec2_rds.engine_version
+  value       = module.ec2_rds.db_instance_engine_version
 }
 
 output "db_instance_multi_az" {
   description = "AWS RDS Multi AZ Status"
-  value = module.ec2_rds.multi_az
+  value = module.ec2_rds.db_instance_multi_az
 }
 
 output "db_instance_availability_zone" {
   description = "AWS RDS Multi AZ Status"
-  value = module.ec2_rds.availability_zone
+  value = module.ec2_rds.db_instance_availability_zone
 }
 
 output "db_instance_port" {
   description = "AWS RDS Instance Port"
-  value       = module.ec2_rds.port
+  value       = module.ec2_rds.db_instance_port
 }
 
 output "db_instance_endpoint" {
   description = "AWS RDS Instance Endpoint"
-  value       = module.ec2_rds.endpoint
+  value       = module.ec2_rds.db_instance_endpoint
 }
