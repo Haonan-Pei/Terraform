@@ -52,19 +52,11 @@ variable "ec2_vpc_security_group_ids" {
   description = "AWS Security Group ID"
 }
 
-variable "rds_vpc_security_group_ids" {
-  description = "AWS Security Group ID"
-}
-
 variable "ec2_tags" {
   description = "AWS Tags"
   type = map(string)
 }
 
-variable "rds_tags" {
-  description = "AWS Tags"
-  type = map(string)
-}
 
 ##### RDS #####
 variable "identifier" {
