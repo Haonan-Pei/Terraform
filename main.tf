@@ -17,7 +17,7 @@ provider "aws" {
 
 module "ec2_rds" {
   source  = "app.terraform.io/eBaoTech/ec2_rds/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   allocated_storage = var.allocated_storage
   db_subnet_group_name = var.db_subnet_group_name
