@@ -23,7 +23,7 @@ module "ec2_instance" {
   #Network
   vpc_id                     = var.vpc_id
   subnet_id                  = var.subnet_id
-  ec2_vpc_security_group_ids = [var.ec2_vpc_security_group_ids]
+  ec2_vpc_security_group_ids = var.ec2_vpc_security_group_ids
 
   #Storage
   root_volume_size   = var.root_volume_size
