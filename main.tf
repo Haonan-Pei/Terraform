@@ -1,10 +1,27 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.31.0"
+    }
+  }
+}
+
+provider "aws" {
+    region     = var.region
+    assume_role {
+      role_arn     = var.role_arn
+      session_name = var.session_name
+    }
+}
+
 module "ec2_instance" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
   version = "1.0.0"
   # insert required variables here
 
   # Credential
-  region = var.region
+  region       = var.region
   role_arn     = var.role_arn
   session_name = var.session_name
 
