@@ -31,8 +31,9 @@ module "aws-sg-mis-tfc-test-node1" {
   kms_key_id     = "arn:aws:kms:ap-southeast-1:792805611202:key/db436907-6f13-4bf8-8fad-f96aef6c31c7"
 
   # Network
-  vpc_id                     = "vpc-0f286b87f6440d569"
-  ec2_vpc_security_group_ids = "sg-08f226bd7393db216"
+  vpc_id                 = "vpc-0f286b87f6440d569"
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = "sg-08f226bd7393db216"
 
   # Storage
   root_volume_size   = 20
@@ -59,6 +60,7 @@ module "aws-sg-mis-tfc-test-node2" {
 
   # Network
   vpc_id                     = "vpc-0f286b87f6440d569"
+  subnet_id                  = var.subnet_id
   ec2_vpc_security_group_ids = "sg-08f226bd7393db216"
 
   # Storage
