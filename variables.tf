@@ -23,7 +23,7 @@ variable "key_name" {
   description = "AWS Key Pair"
 }
 
-variable "ec2_kms_key_id" {
+variable "kms_key_id" {
   description = "AWS KMS Key ID"
 }
 variable "root_volume_size" {
@@ -46,7 +46,7 @@ variable "subnet_id" {
   description = "AWS Subnet ID"
 }
 
-variable "ec2_vpc_security_group_ids" {
+variable "vpc_security_group_ids" {
   description = "AWS Security Group ID"
 }
 

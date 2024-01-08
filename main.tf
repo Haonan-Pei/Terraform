@@ -27,7 +27,7 @@ module "aws-sg-mis-tfc-test-node1" {
   # EC2 Instance
   instance_name  = "aws-sg-mis-tfc-test-node1"
   instance_type  = "t3.micro"
-  key_name       = "var.key_name"
+  key_name       = "aws-terraform-node"
   kms_key_id     = "arn:aws:kms:ap-southeast-1:792805611202:key/db436907-6f13-4bf8-8fad-f96aef6c31c7"
 
   # Network
@@ -54,7 +54,7 @@ module "aws-sg-mis-tfc-test-node2" {
   # EC2 Instance
   instance_name  = "aws-sg-mis-tfc-test-node2"
   instance_type  = "t3.medium"
-  key_name       = "var.key_name"
+  key_name       = "aws-terraform-node"
   kms_key_id     = "arn:aws:kms:ap-southeast-1:792805611202:key/db436907-6f13-4bf8-8fad-f96aef6c31c7"
 
   # Network
