@@ -15,10 +15,9 @@ provider "aws" {
     }
 }
 
-module "ec2_instance" {
+module "aws-sg-mis-tfc-test-node1" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
   version = "1.0.0"
-  # insert required variables here
 
   # Credential
   region       = var.region
@@ -26,20 +25,19 @@ module "ec2_instance" {
   session_name = var.session_name
 
   # EC2 Instance
-  instance_name  = var.instance_name
-  instance_type  = var.instance_type
-  key_name       = var.key_name
-  ec2_kms_key_id = var.ec2_kms_key_id
+  instance_name  = "aws-sg-mis-tfc-test-node1"
+  instance_type  = "t3.micro"
+  key_name       = "var.key_name"
+  kms_key_id     = "arn:aws:kms:ap-southeast-1:792805611202:key/db436907-6f13-4bf8-8fad-f96aef6c31c7"
 
   # Network
-  vpc_id                     = var.vpc_id
-  subnet_id                  = var.subnet_id
-  ec2_vpc_security_group_ids = var.ec2_vpc_security_group_ids
+  vpc_id                     = "vpc-0f286b87f6440d569"
+  ec2_vpc_security_group_ids = "sg-08f226bd7393db216"
 
   # Storage
-  root_volume_size   = var.root_volume_size
-  ebs_01_volume_size = var.ebs_01_volume_size
-  ebs_02_volume_size = var.ebs_02_volume_size
+  root_volume_size   = 20
+  ebs_01_volume_size = 30
+  ebs_02_volume_size = 40
 
   ec2_tags = var.ec2_tags
 }
