@@ -17,7 +17,7 @@ provider "aws" {
 
 module "aws-sg-mis-tfc-test-node" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   # Credential
   region       = "ap-southeast-1"
@@ -45,7 +45,7 @@ module "aws-sg-mis-tfc-test-node" {
 
 module "aws-sg-mis-tfc-prod-node" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   # Credential
   region       = "ap-southeast-1"
