@@ -1,7 +1,7 @@
 output "aws-sg-mis-tfc-test-node_instance_id" {
   description = "ID of the EC2 instance"
   value = [
-    for i in module.aws-sg-mis-tfc-test-node : i.instance_id
+    for i in module.aws-sg-mis-tfc-test-node : i.id
   ]
 }
 
