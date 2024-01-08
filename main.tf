@@ -61,7 +61,7 @@ module "aws-sg-mis-tfc-test-node2" {
   # Network
   vpc_id                     = "vpc-0f286b87f6440d569"
   subnet_id                  = var.subnet_id
-  ec2_vpc_security_group_ids = "sg-08f226bd7393db216"
+  vpc_security_group_ids     = "sg-08f226bd7393db216"
 
   # Storage
   root_volume_size   = 20
