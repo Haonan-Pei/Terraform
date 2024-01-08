@@ -15,7 +15,7 @@ provider "aws" {
     }
 }
 
-module "aws-sg-mis-tfc-test-node1" {
+module "aws-sg-mis-tfc-test-node" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
   version = "1.0.1"
 
@@ -25,7 +25,7 @@ module "aws-sg-mis-tfc-test-node1" {
   session_name = "AWS-Test-Account"
 
   # EC2 Instance
-  instance_name  = "aws-sg-mis-tfc-test-node1"
+  instance_name  = ["aws-sg-mis-tfc-test-node1"]
   instance_type  = "t3.micro"
   key_name       = "aws-terraform-node"
   kms_key_id     = "arn:aws:kms:ap-southeast-1:792805611202:key/db436907-6f13-4bf8-8fad-f96aef6c31c7"
@@ -43,7 +43,7 @@ module "aws-sg-mis-tfc-test-node1" {
   ec2_tags = var.ec2_tags
 }
 
-module "aws-sg-mis-tfc-test-node2" {
+module "aws-sg-mis-tfc-prod-node" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
   version = "1.0.1"
 
@@ -53,7 +53,7 @@ module "aws-sg-mis-tfc-test-node2" {
   session_name = "AWS-Test-Account"
 
   # EC2 Instance
-  instance_name  = "aws-sg-mis-tfc-test-node2"
+  instance_name  = ["aws-sg-mis-tfc-prod-node1","aws-sg-mis-tfc-prod-node2"]
   instance_type  = "t3.medium"
   key_name       = "aws-terraform-node"
   kms_key_id     = "arn:aws:kms:ap-southeast-1:792805611202:key/db436907-6f13-4bf8-8fad-f96aef6c31c7"
