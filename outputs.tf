@@ -1,6 +1,6 @@
 output "instance_id" {
   description = "ID of the EC2 instance"
-  value       = module.ec2_instance.instance_id
+  value       = module.aws-sg-mis-tfc-test-node1.instance_id
 }
 
 output "instance_arn" {

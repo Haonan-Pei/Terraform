@@ -15,7 +15,7 @@ provider "aws" {
     }
 }
 
-module "aws-sg-mis-tfc-test-node1" {
+module "ec2_instance" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
   version = "1.0.1"
 
@@ -43,7 +43,7 @@ module "aws-sg-mis-tfc-test-node1" {
   ec2_tags = var.ec2_tags
 }
 
-module "aws-sg-mis-tfc-test-node2" {
+module "ec2_instance" {
   source  = "app.terraform.io/eBaoTech/ec2-instance/aws"
   version = "1.0.1"
 
